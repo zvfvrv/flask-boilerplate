@@ -1,2 +1,4 @@
-# flask-boilerplate
-Flask boilerplate,  nginx + uwsgi + flask inside a docker container
+# flask-boilerplate a simple fask app 
+Flask boilerplate,  nginx + uwsgi + flask dockerized
+
+WIP

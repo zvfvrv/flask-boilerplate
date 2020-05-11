@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+    nginx:
+        image: nginx:latest
+        depends_on:
+            - flask
+        volumes:
+            - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+        networks:
+            - zvfvrv-net
+        ports:
+            - 80:80
+    flask:
+        build:
+            context: .
+        networks:
+            zvfvrv-net:
+                aliases:
+                - flask-app
+        volumes:
+            - flask-data:/usr/src/app/data
+volumes:
+    flask-data:
+networks:
+    zvfvrv-net:
